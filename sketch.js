@@ -12,6 +12,8 @@ var score;
 var gameOverImg,restartImg
 var jumpSound , checkPointSound, dieSound
 
+var backImg;
+
 function preload(){
   trex_running = loadAnimation("trex1.png","trex3.png","trex4.png");
   trex_collided = loadAnimation("trex_collided.png");
@@ -27,12 +29,14 @@ function preload(){
   obstacle5 = loadImage("obstacle5.png");
   obstacle6 = loadImage("obstacle6.png");
   
-  restartImg = loadImage("restart.png")
-  gameOverImg = loadImage("gameOver.png")
+  restartImg = loadImage("restart.png");
+  gameOverImg = loadImage("gameOver.png");
   
-  jumpSound = loadSound("jump.mp3")
-  dieSound = loadSound("die.mp3")
-  checkPointSound = loadSound("checkPoint.mp3")
+  jumpSound = loadSound("jump.mp3");
+  dieSound = loadSound("die.mp3");
+  checkPointSound = loadSound("checkPoint.mp3");
+
+  backImg = loadImage("desert.png");
 }
 
 function setup() {
@@ -79,7 +83,7 @@ function setup() {
 
 function draw() {
   
-  background(180);
+  background(backImg);
   //displaying score
   text("Score: "+ score, trex.x+30,trex.y-50);
 
